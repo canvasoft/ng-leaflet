@@ -1,6 +1,6 @@
 # Angular Leaflet for NG2
 
-![Angular Leaflet for NG2](logo.svg)
+![Angular Leaflet for NG2](https://cdn.rawgit.com/angular-ui/ui-leaflet-ng2/master/logo.svg)
 
 Angular 2 component for Leaflet 1.x (WIP - NEEDED HELP)
 
