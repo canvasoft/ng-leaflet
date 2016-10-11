@@ -1,49 +1,61 @@
 {
   "name": "ui-leaflet-ng2",
   "version": "0.1.0",
-  "description": "Angular 2 component for Leaflet 1.x",
   "scripts": {
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server -c bs-config.json\" ",
+    "lite": "lite-server",
+    "lint": "tslint src/**/*.ts",
+    "test": "tsc && karma start",
     "postinstall": "typings install",
+    "prepublish": "tsc",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/angular-ui/ui-leaflet-ng2.git"
+    "url": "https://github.com/angular-ui/ui-leaflet-ng2"
+  },
+  "author": {
+    "name": "Michael A. Salgado",
+    "email": "elesdoar@gmail.com"
   },
   "keywords": [
     "angular",
-    "2",
+    "angular2",
     "leaflet",
-    "typescript",
-    "angular-ui"
+    "ui-lealet",
+    "maps",
+    "gis"
   ],
-  "author": "https://github.com/angular-ui/ui-leaflet-ng2/graphs/contributors",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/angular-ui/ui-leaflet-ng2/issues"
   },
-  "homepage": "https://github.com/angular-ui/ui-leaflet-ng2#readme",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "dependencies": {
-    "@angular/common": "~2.0.2",
-    "@angular/compiler": "~2.0.2",
     "@angular/core": "~2.0.2",
-    "@angular/forms": "~2.0.2",
-    "@angular/http": "~2.0.2",
-    "@angular/platform-browser": "~2.0.2",
-    "@angular/platform-browser-dynamic": "~2.0.2",
-    "@angular/router": "~3.0.2",
-    "@angular/upgrade": "~2.0.2",
-    "angular-in-memory-web-api": "~0.1.5",
-    "core-js": "^2.4.1",
-    "leaflet": "^1.0.1",
-    "reflect-metadata": "^0.1.8",
-    "rxjs": "5.0.0-beta.12",
-    "zone.js": "^0.6.25"
+    "leaflet": "^1.0.1"
   },
   "devDependencies": {
+    "@angular/common": "^2.0.2",
+    "@angular/compiler": "^2.0.2",
+    "@angular/platform-browser": "^2.0.2",
+    "@angular/platform-browser-dynamic": "^2.0.2",
+    "codelyzer": "^0.0.20",
+    "concurrently": "^3.1.0",
+    "core-js": "^2.4.1",
+    "lite-server": "^2.2.2",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.0-beta.12",
+    "systemjs": "0.19.39",
+    "tslint": "^3.15.1",
     "typescript": "^2.0.3",
-    "typings":"^1.4.0"
+    "typings": "^1.4.0",
+    "zone.js": "^0.6.25"
+  },
+  "engines": {
+    "node": ">= 4.5"
   }
 }

@@ -2,7 +2,7 @@
 
 ![Angular Leaflet for NG2](https://cdn.rawgit.com/angular-ui/ui-leaflet-ng2/master/logo.svg)
 
-Angular 2 component for Leaflet 1.x (WIP - NEEDED HELP)
+Angular 2 component for Leaflet 1.x (WIP - HELP WANTED)
 
 ## Goal
 
@@ -30,4 +30,15 @@ Architecture:
 * [Webpack](http://webpack.github.io/docs/)
 * [Angular 2](https://angular.io/)
 
-Build system: **[gulp](http://gulpjs.com/)**.
+## Development
+
+To generate all `*.js`, `*.js.map` and `*.d.ts` files:
+
+```bash
+$ npm run tsc
+```
+
+To lint all `*.ts` files:
+
+```bash
+$ npm run lint

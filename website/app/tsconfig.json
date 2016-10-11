@@ -7,14 +7,6 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "declaration": true,
-    "outDir": "./dist"
-  },
-  "files": [
-    "typings/index.d.ts",
-    "src/ng2-leaflet.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+    "outDir": "./js"
+  }
 }

@@ -1,0 +1,11 @@
+{
+  "files": ["./src/**/*.{html,htm,css,js}"],
+  "server": {
+    "baseDir": "./website/",
+    "directory": true,
+    "routes": {
+      "/dist": "dist",
+      "/node_modules": "node_modules"
+    }
+  }
+}
