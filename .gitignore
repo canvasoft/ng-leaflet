@@ -2,12 +2,20 @@
 node_modules/*
 npm-debug.log
 
+# TypeScript
+dist/**/*.js
+dist/**/*.map
+dist/**/*.d.ts
+
 # JetBrains
 .idea
 .project
 .settings
 .idea/*
 *.iml
+
+# VS Code
+.vscode/*
 
 # Windows
 Thumbs.db
@@ -17,5 +25,5 @@ Desktop.ini
 .DS_Store
 **/.DS_Store
 
-# Typings
-typings
+# Ngc generated files
+**/*.ngfactory.ts

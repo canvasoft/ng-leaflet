@@ -9,7 +9,6 @@
     "noImplicitReturns": true,
     "sourceMap": true,
     "declaration": true,
-    "outDir": "./dist",
     "typeRoots": [
       "node_modules/@types"
     ]
@@ -17,7 +16,6 @@
   "exclude": [
     "node_modules",
     "dist",
-    "website",
     "**/*.spec.ts"
   ],
   "angularCompilerOptions": {
