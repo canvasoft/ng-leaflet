@@ -1,18 +1,21 @@
 {
   "compilerOptions": {
-    "noImplicitAny": true,
-    "module": "commonjs",
-    "target": "ES5",
+    "allowUnusedLabels": false,
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowUnusedLabels": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
     "noImplicitReturns": true,
     "sourceMap": true,
-    "declaration": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "ES5",
     "outDir": "./dist",
     "typeRoots": [
       "node_modules/@types"
-    ]
+    ],
+    "skipLibCheck": true
   },
   "exclude": [
     "node_modules",

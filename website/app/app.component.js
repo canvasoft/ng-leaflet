@@ -9,14 +9,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
-        this.name = 'UI Leaflet';
+        this.name = 'UI Leaflet 2';
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'leaflet-app',
-        template: "\n    <h3>Hello aaa{{name}}</h3>\n    <ui-leaflet>\n    </ui-leaflet>\n    "
+        template: "\n    <h3>Hello {{name}}</h3>\n    <ui-leaflet>\n    </ui-leaflet>\n    "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

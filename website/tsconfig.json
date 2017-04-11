@@ -1,4 +1,5 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
     "noImplicitAny": true,
     "module": "commonjs",
@@ -10,12 +11,14 @@
     "sourceMap": true,
     "declaration": true,
     "typeRoots": [
-      "node_modules/@types"
-    ]
+      "../node_modules/@types"
+    ],
+    "skipLibCheck": true
   },
   "exclude": [
-    "node_modules",
-    "dist",
+    "../node_modules",
+    "../dist",
+    "../src",
     "**/*.spec.ts"
   ],
   "angularCompilerOptions": {
