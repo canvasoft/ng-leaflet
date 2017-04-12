@@ -87,7 +87,9 @@
       "check-decl",
       "check-operator",
       "check-separator",
-      "check-type"
+      {
+        "check-type": "nospace"
+      }
     ],
     "directive-selector": [true, "attribute", "", "camelCase"],
     "component-selector": [true, "element", "", "kebab-case"],
