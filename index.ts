@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { LeafletComponent } from './src/components/leaflet.component';
 import { SampleDirective } from './src/directives/sample.directive';
 import { SamplePipe } from './src/pipes/sample.pipe';
-import { SampleService } from './src/services/sample.service';
+import { DefaultsService } from './src/services/defaults.service';
 
 export * from './src/components/leaflet.component';
 export * from './src/directives/sample.directive';
 export * from './src/pipes/sample.pipe';
-export * from './src/services/sample.service';
+export * from './src/services/defaults.service';
 
 @NgModule({
   imports: [
@@ -29,7 +29,7 @@ export class UiLeafletModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: UiLeafletModule,
-      providers: [SampleService]
+      providers: [DefaultsService]
     };
   }
 }
