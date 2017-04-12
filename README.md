@@ -2,18 +2,18 @@
 
 ## Installation
 
-To install this library, run:
+To install ui-leaflet-ng2, run:
 
 ```bash
-$ npm install ui-leaflet-ng2 --save
+$ npm install elesdoar/ui-leaflet-ng2#master --save
 ```
 
 ## Consuming your library
 
-Once you have published your library to npm, you can import your library in any Angular application by running:
+Once you have published your library to npm, you can import ui-leaflet-ng2 in any Angular application by running:
 
 ```bash
-$ npm install ui-leaflet-ng2
+$ npm install elesdoar/ui-leaflet-ng2#master
 ```
 
 and then from your Angular `AppModule`:
@@ -25,7 +25,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { SampleModule } from 'ui-leaflet-ng2';
+import { UiLeafletModule } from 'ui-leaflet-ng2';
 
 @NgModule({
   declarations: [
@@ -33,9 +33,7 @@ import { SampleModule } from 'ui-leaflet-ng2';
   ],
   imports: [
     BrowserModule,
-
-    // Specify your library as an import
-    LibraryModule
+    UiLeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -45,12 +43,12 @@ export class AppModule { }
 
 Once your library is imported, you can use its components, directives and pipes in your Angular application:
 
-```xml
+```html
 <!-- You can now use your library component in app.component.html -->
 <h1>
   {{title}}
 </h1>
-<sampleComponent></sampleComponent>
+<ui-leaflet></ui-leaflet>
 ```
 
 ## Development
