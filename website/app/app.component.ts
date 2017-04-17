@@ -6,8 +6,15 @@ import { Component } from '@angular/core';
   template:
     `
     <h3>Hello {{name}}</h3>
-    <ui-leaflet>
+    <ui-leaflet [lfCenter]="center">
     </ui-leaflet>
     `
 })
-export class AppComponent { name = 'UI Leaflet 2'; }
+export class AppComponent {
+  name = 'UI Leaflet 2';
+  center =  {
+    lat: 4.624335,
+    lng: -74.063644,
+    zoom: 3
+  };
+}
