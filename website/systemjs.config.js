@@ -58,7 +58,7 @@
         // defaultExtension: 'ts'
       },
       'ui-leaflet-ng2': {
-        main: 'index.js',
+        main: 'ui-leaflet-ng2.js',
         // defaultExtension: 'ts'
       },
       rxjs: {

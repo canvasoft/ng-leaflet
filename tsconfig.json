@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowUnusedLabels": false,
+    "baseUrl": "./src/",
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
