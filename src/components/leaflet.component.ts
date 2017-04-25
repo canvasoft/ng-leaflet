@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, ViewChild } from '@angular/core';
 import * as L from 'leaflet';
 
 import { DefaultsService } from '../services/defaults.service';
@@ -16,22 +16,23 @@ export class LeafletComponent {
   private mapReady: EventEmitter<any> = new EventEmitter(true);
 
   private map: any;
-  private defaults: any;
+  @Input() private defaults: any;
+  @Input() private id: string;
 
-  constructor(defaults:DefaultsService, private leafletService: LeafletService) {
+  constructor(private defaultsService:DefaultsService, private leafletService: LeafletService) {
     // console.log('Lf Center in component:', this.lfCenter);
-
-    this.defaults = defaults.getDefaults();
   }
 
   ngAfterViewInit() {
-    this.map = new L.Map(this.mapEl.nativeElement);
+    this.defaults = this.defaultsService.setDefaults(this.defaults, this.id);
+    console.log('New defaults:', this.defaults);
+    this.map = new L.Map(this.mapEl.nativeElement, this.defaultsService.getMapCreationDefaults(this.id));
 
     if (!this.defaults.layers) {
       console.log('Putting default tileLayer', this.defaults.tileLayer);
       new L.TileLayer(this.defaults.tileLayer).addTo(this.map);
     }
-    this.map.setView(new L.LatLng(4.624335, -74.063644), 12);
+    this.map.setView(new L.LatLng(this.defaults.center.lat, this.defaults.center.lng), this.defaults.center.zoom);
 
     this.map.whenReady(() => {
       this.mapReady.emit(true);

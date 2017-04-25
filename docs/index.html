@@ -31,9 +31,34 @@
   </head>
 
   <body>
-    <div class="container">
-      <h1>Test ui-leaflet-ng2</h1>
-      <leaflet-app>Loading leaflet map...</leaflet-app>
+    <div class="container-fluid">
+      <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+          data-target="#navBar" aria-controls="navBar" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">UI Leaflet for Angular 2</a>
+        <div class="collapse navbar-collapse" id="navBar">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Docs</a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+            Navbar text with an inline element
+          </span>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <leaflet-app>Loading leaflet map...</leaflet-app>
+      </div>
     </div>
   </body>
 </html>

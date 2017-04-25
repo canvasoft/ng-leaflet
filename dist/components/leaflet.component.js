@@ -14,20 +14,22 @@ var L = require("leaflet");
 var defaults_service_1 = require("../services/defaults.service");
 var leaflet_service_1 = require("../services/leaflet.service");
 var LeafletComponent = (function () {
-    function LeafletComponent(defaults, leafletService) {
-        // console.log('Lf Center in component:', this.lfCenter);
+    function LeafletComponent(defaultsService, leafletService) {
+        this.defaultsService = defaultsService;
         this.leafletService = leafletService;
         this.mapReady = new core_1.EventEmitter(true);
-        this.defaults = defaults.getDefaults();
+        // console.log('Lf Center in component:', this.lfCenter);
     }
     LeafletComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
-        this.map = new L.Map(this.mapEl.nativeElement);
+        this.defaults = this.defaultsService.setDefaults(this.defaults, this.id);
+        console.log('New defaults:', this.defaults);
+        this.map = new L.Map(this.mapEl.nativeElement, this.defaultsService.getMapCreationDefaults(this.id));
         if (!this.defaults.layers) {
             console.log('Putting default tileLayer', this.defaults.tileLayer);
             new L.TileLayer(this.defaults.tileLayer).addTo(this.map);
         }
-        this.map.setView(new L.LatLng(4.624335, -74.063644), 12);
+        this.map.setView(new L.LatLng(this.defaults.center.lat, this.defaults.center.lng), this.defaults.center.zoom);
         this.map.whenReady(function () {
             _this.mapReady.emit(true);
         });
@@ -51,6 +53,14 @@ __decorate([
     core_1.ViewChild('map'),
     __metadata("design:type", core_1.ElementRef)
 ], LeafletComponent.prototype, "mapEl", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], LeafletComponent.prototype, "defaults", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], LeafletComponent.prototype, "id", void 0);
 LeafletComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
