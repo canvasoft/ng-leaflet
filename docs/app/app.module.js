@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var app_component_1 = require("./app.component");
 var ui_leaflet_ng2_1 = require("ui-leaflet-ng2");
 var AppModule = (function () {
@@ -17,7 +18,7 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, ui_leaflet_ng2_1.UiLeafletModule],
+        imports: [platform_browser_1.BrowserModule, ui_leaflet_ng2_1.UiLeafletModule, ng_bootstrap_1.NgbModule],
         declarations: [app_component_1.AppComponent],
         bootstrap: [app_component_1.AppComponent]
     })

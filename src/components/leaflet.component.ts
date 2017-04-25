@@ -8,7 +8,7 @@ import { LeafletService } from '../services/leaflet.service';
   moduleId: module.id,
   selector: 'ui-leaflet',
   providers: [DefaultsService, LeafletService],
-  styles: ['.angular-leaflet-map { width: 100%; height: 400px; }'],
+  styles: ['.angular-leaflet-map { width: 100%; height: 400px; margin-top: 10px; }'],
   template: `<div #map class="angular-leaflet-map"></div>`
 })
 export class LeafletComponent {

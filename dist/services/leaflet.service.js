@@ -7,23 +7,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.name = 'UI Leaflet 2';
-        this.center = {
-            lat: 4.624335,
-            lng: -74.063644,
-            zoom: 3
-        };
+var LeafletService = (function () {
+    function LeafletService() {
     }
-    return AppComponent;
+    LeafletService.prototype.isDefined = function (object) {
+        return object !== undefined && object !== null;
+    };
+    LeafletService.prototype.isObject = function (object) {
+        return object !== null && typeof object === 'object';
+    };
+    return LeafletService;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'leaflet-app',
-        template: "\n    <h3>Hello {{name}}</h3>\n    <ui-leaflet [lfCenter]=\"center\">\n    </ui-leaflet>\n    "
-    })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+LeafletService = __decorate([
+    core_1.Injectable()
+], LeafletService);
+exports.LeafletService = LeafletService;
+//# sourceMappingURL=leaflet.service.js.map

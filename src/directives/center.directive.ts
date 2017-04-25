@@ -1,21 +1,19 @@
-import { Directive, ElementRef, Input, OnInit, Host } from '@angular/core';
+import { Directive, ElementRef, Input, OnChanges, OnInit, Host } from '@angular/core';
 
 import { LeafletComponent } from '../components/leaflet.component';
 import { LeafletService } from '../services/leaflet.service';
 
 @Directive({
-  selector: '[lfCenter]'
+  selector: '[lfCenter]',
 })
-export class CenterDirective implements OnInit {
+export class CenterDirective implements OnInit, OnChanges {
   @Input() lfCenter: any;
 
   constructor(private el: ElementRef, @Host() private uiLeaflet:LeafletComponent,
     private leafletService: LeafletService) {
   }
 
-  ngOnInit() {
-    console.log('Parent:', this.uiLeaflet);
-    console.log('Lf Center asdas:', this.lfCenter);
+  private changeCenter() {
     const leafletService: LeafletService = this.leafletService;
     let center = this.lfCenter;
 
@@ -23,9 +21,28 @@ export class CenterDirective implements OnInit {
       leafletService.isDefined(center.lng) && leafletService.isDefined(center.zoom)) {
       this.uiLeaflet.getMap().then((map) => {
         map.setView([center.lat, center.lng], center.zoom);
+
+        map.on('moveend', () => {
+          Object.assign(center, {
+            lat: map.getCenter().lat,
+            lng: map.getCenter().lng,
+            zoom: map.getZoom(),
+            autoDiscover: false
+          });
+        });
       });
     } else {
       console.warn('[ui-leaflet-ng2] - Center is not valid');
     }
+  }
+
+  ngOnInit() {
+    console.log('Parent:', this.uiLeaflet);
+    console.log('Lf Center:', this.lfCenter);
+    this.changeCenter();
+  }
+
+  ngOnChanges(changes:any) {
+    this.changeCenter();
   }
 }

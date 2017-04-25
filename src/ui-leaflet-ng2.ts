@@ -1,14 +1,14 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LeafletComponent } from './src/components/leaflet.component';
-import { CenterDirective } from './src/directives/center.directive';
-import { SamplePipe } from './src/pipes/sample.pipe';
-import { DefaultsService } from './src/services/defaults.service';
+import { LeafletComponent } from './components/leaflet.component';
+import { CenterDirective } from './directives/center.directive';
+import { SamplePipe } from './pipes/sample.pipe';
+import { DefaultsService } from './services/defaults.service';
 
-export * from './src/components/leaflet.component';
-export * from './src/directives/center.directive';
-export * from './src/pipes/sample.pipe';
-export * from './src/services/defaults.service';
+export * from './components/leaflet.component';
+export * from './directives/center.directive';
+export * from './pipes/sample.pipe';
+export * from './services/defaults.service';
 
 @NgModule({
   imports: [
