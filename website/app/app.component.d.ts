@@ -5,4 +5,5 @@ export declare class AppComponent {
         lng: number;
         zoom: number;
     };
+    changeCenter(city: string): void;
 }

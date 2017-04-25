@@ -13,16 +13,35 @@ var AppComponent = (function () {
         this.center = {
             lat: 4.624335,
             lng: -74.063644,
-            zoom: 3
+            zoom: 12
         };
     }
+    AppComponent.prototype.changeCenter = function (city) {
+        switch (city) {
+            case 'bogota':
+                this.center = {
+                    lat: 4.624335,
+                    lng: -74.063644,
+                    zoom: 12
+                };
+                break;
+            case 'medellin':
+                this.center = {
+                    lat: 6.27053,
+                    lng: -75.57211999999998,
+                    zoom: 11
+                };
+                break;
+        }
+        console.log('Changing center to ' + city);
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'leaflet-app',
-        template: "\n    <h3>Hello {{name}}</h3>\n    <ui-leaflet [lfCenter]=\"center\">\n    </ui-leaflet>\n    "
+        template: "\n    <h3>Hello {{name}}</h3>\n    <h5>Center:</h5>\n    <pre>{{center | json}}</pre>\n    <button type='button' class=\"btn btn-secondary\" (click) = \"changeCenter('bogota')\">Bogot\u00E1</button>\n    <button type='button' class=\"btn btn-info\" (click) = \"changeCenter('medellin')\">Medell\u00EDn</button>\n    <ui-leaflet [lfCenter]=\"center\">\n    </ui-leaflet>\n    "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

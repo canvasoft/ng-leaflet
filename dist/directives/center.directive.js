@@ -21,20 +21,34 @@ var CenterDirective = (function () {
         this.uiLeaflet = uiLeaflet;
         this.leafletService = leafletService;
     }
-    CenterDirective.prototype.ngOnInit = function () {
-        console.log('Parent:', this.uiLeaflet);
-        console.log('Lf Center asdas:', this.lfCenter);
+    CenterDirective.prototype.changeCenter = function () {
         var leafletService = this.leafletService;
         var center = this.lfCenter;
         if (leafletService.isObject(center) && leafletService.isDefined(center.lat) &&
             leafletService.isDefined(center.lng) && leafletService.isDefined(center.zoom)) {
             this.uiLeaflet.getMap().then(function (map) {
                 map.setView([center.lat, center.lng], center.zoom);
+                map.on('moveend', function () {
+                    Object.assign(center, {
+                        lat: map.getCenter().lat,
+                        lng: map.getCenter().lng,
+                        zoom: map.getZoom(),
+                        autoDiscover: false
+                    });
+                });
             });
         }
         else {
             console.warn('[ui-leaflet-ng2] - Center is not valid');
         }
+    };
+    CenterDirective.prototype.ngOnInit = function () {
+        console.log('Parent:', this.uiLeaflet);
+        console.log('Lf Center:', this.lfCenter);
+        this.changeCenter();
+    };
+    CenterDirective.prototype.ngOnChanges = function (changes) {
+        this.changeCenter();
     };
     return CenterDirective;
 }());
@@ -44,7 +58,7 @@ __decorate([
 ], CenterDirective.prototype, "lfCenter", void 0);
 CenterDirective = __decorate([
     core_1.Directive({
-        selector: '[lfCenter]'
+        selector: '[lfCenter]',
     }),
     __param(1, core_1.Host()),
     __metadata("design:paramtypes", [core_1.ElementRef, leaflet_component_1.LeafletComponent,

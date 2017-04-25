@@ -24,7 +24,8 @@
   "bugs": {
     "url": "https://github.com/angular-ui/ui-leaflet-ng2/issues"
   },
-  "main": "./dist/index.js",
+  "main": "./dist/ui-leaflet-ng2",
+  "typings": "dist/ui-leaflet-ng2",
   "dependencies": {
     "@angular/animations": "^4.0.1",
     "@angular/common": "^4.0.1",

@@ -56,7 +56,7 @@ LeafletComponent = __decorate([
         moduleId: module.id,
         selector: 'ui-leaflet',
         providers: [defaults_service_1.DefaultsService, leaflet_service_1.LeafletService],
-        styles: ['.angular-leaflet-map { width: 100%; height: 400px; }'],
+        styles: ['.angular-leaflet-map { width: 100%; height: 400px; margin-top: 10px; }'],
         template: "<div #map class=\"angular-leaflet-map\"></div>"
     }),
     __metadata("design:paramtypes", [defaults_service_1.DefaultsService, leaflet_service_1.LeafletService])
