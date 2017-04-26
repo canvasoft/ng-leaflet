@@ -15,6 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var leaflet_component_1 = require("../components/leaflet.component");
 var leaflet_service_1 = require("../services/leaflet.service");
+/**
+ * Center directive for ui-leaflet-ng2.
+ *
+ * @author Michael Salgado <elesdoar@gmail.com>
+ */
 var CenterDirective = (function () {
     function CenterDirective(el, uiLeaflet, leafletService) {
         this.el = el;

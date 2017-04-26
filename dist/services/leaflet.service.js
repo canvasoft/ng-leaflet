@@ -8,19 +8,41 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var _errorHeader = '[ui-leaflet-ng2] ';
+/**
+ * Helpers for ui-leaflet-ng2 map.
+ *
+ * @author Michael Salgado <elesdoar@gmail.com>
+ */
 var LeafletService = (function () {
     function LeafletService() {
     }
+    /**
+     * Check if an object is defined.
+     *
+     * @param object    A object.
+     * @returns         true if the object is defined.
+     */
     LeafletService.prototype.isDefined = function (object) {
         return object !== undefined && object !== null;
     };
+    /**
+     * Check if object param is an object.
+     *
+     * @param object    Any.
+     * @returns         true if the param is defined and object.
+     */
     LeafletService.prototype.isObject = function (object) {
         return object !== null && typeof object === 'object';
     };
+    /**
+     * Get effective map ID.
+     *
+     * @param d    Defaults from defaults service.
+     * @returns    Map ID.
+     */
     LeafletService.prototype.obtainEffectiveMapId = function (d, mapId) {
         var id;
         var keys = Object.keys(d);
-        console.log('Keys', keys);
         if (!this.isDefined(mapId)) {
             if (keys.length === 0 || (keys.length === 1 && keys[0] === 'main')) {
                 // default non id attribute map

@@ -13,27 +13,39 @@ var core_1 = require("@angular/core");
 var L = require("leaflet");
 var defaults_service_1 = require("../services/defaults.service");
 var leaflet_service_1 = require("../services/leaflet.service");
+/**
+ * Main ui-leaflet-ng2 component.
+ *
+ * <pre>
+ *   <ui-leaflet></ui-leaflet>
+ * </pre>
+ *
+ * @author Michael Salgado <elesdoar@gmail.com>
+ */
 var LeafletComponent = (function () {
     function LeafletComponent(defaultsService, leafletService) {
         this.defaultsService = defaultsService;
         this.leafletService = leafletService;
         this.mapReady = new core_1.EventEmitter(true);
-        // console.log('Lf Center in component:', this.lfCenter);
     }
     LeafletComponent.prototype.ngAfterViewInit = function () {
-        var _this = this;
+        console.log('ID', this.id);
         this.defaults = this.defaultsService.setDefaults(this.defaults, this.id);
-        console.log('New defaults:', this.defaults);
         this.map = new L.Map(this.mapEl.nativeElement, this.defaultsService.getMapCreationDefaults(this.id));
-        if (!this.defaults.layers) {
+        if (!this.layers) {
             console.log('Putting default tileLayer', this.defaults.tileLayer);
             new L.TileLayer(this.defaults.tileLayer).addTo(this.map);
         }
-        this.map.setView(new L.LatLng(this.defaults.center.lat, this.defaults.center.lng), this.defaults.center.zoom);
-        this.map.whenReady(function () {
-            _this.mapReady.emit(true);
-        });
+        if (!this.leafletService.isDefined(this.lfCenter)) {
+            this.map.setView(new L.LatLng(this.defaults.center.lat, this.defaults.center.lng), this.defaults.center.zoom);
+        }
+        this.mapReady.emit(true);
     };
+    /**
+     * Get LeafletJS Map
+     *
+     * @return LeafletJS Map
+     */
     LeafletComponent.prototype.getMap = function () {
         var _this = this;
         return new Promise(function (resolve) {
@@ -61,6 +73,14 @@ __decorate([
     core_1.Input(),
     __metadata("design:type", String)
 ], LeafletComponent.prototype, "id", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], LeafletComponent.prototype, "lfCenter", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], LeafletComponent.prototype, "layers", void 0);
 LeafletComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

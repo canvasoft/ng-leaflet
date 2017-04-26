@@ -3,6 +3,12 @@ import { Directive, ElementRef, Input, OnChanges, OnInit, Host } from '@angular/
 import { LeafletComponent } from '../components/leaflet.component';
 import { LeafletService } from '../services/leaflet.service';
 
+
+/**
+ * Center directive for ui-leaflet-ng2.
+ *
+ * @author Michael Salgado <elesdoar@gmail.com>
+ */
 @Directive({
   selector: '[lfCenter]',
 })

@@ -4,6 +4,15 @@ import * as L from 'leaflet';
 import { DefaultsService } from '../services/defaults.service';
 import { LeafletService } from '../services/leaflet.service';
 
+/**
+ * Main ui-leaflet-ng2 component.
+ *
+ * <pre>
+ *   <ui-leaflet></ui-leaflet>
+ * </pre>
+ *
+ * @author Michael Salgado <elesdoar@gmail.com>
+ */
 @Component({
   moduleId: module.id,
   selector: 'ui-leaflet',
@@ -18,27 +27,34 @@ export class LeafletComponent {
   private map: any;
   @Input() private defaults: any;
   @Input() private id: string;
+  @Input() private lfCenter: any;
+  @Input() private layers: any;
 
-  constructor(private defaultsService:DefaultsService, private leafletService: LeafletService) {
-    // console.log('Lf Center in component:', this.lfCenter);
+  constructor(public defaultsService: DefaultsService, private leafletService: LeafletService) {
   }
 
   ngAfterViewInit() {
+    console.log('ID', this.id);
     this.defaults = this.defaultsService.setDefaults(this.defaults, this.id);
-    console.log('New defaults:', this.defaults);
     this.map = new L.Map(this.mapEl.nativeElement, this.defaultsService.getMapCreationDefaults(this.id));
 
-    if (!this.defaults.layers) {
+    if (!this.layers) {
       console.log('Putting default tileLayer', this.defaults.tileLayer);
       new L.TileLayer(this.defaults.tileLayer).addTo(this.map);
     }
-    this.map.setView(new L.LatLng(this.defaults.center.lat, this.defaults.center.lng), this.defaults.center.zoom);
 
-    this.map.whenReady(() => {
-      this.mapReady.emit(true);
-    });
+    if (!this.leafletService.isDefined(this.lfCenter)) {
+      this.map.setView(new L.LatLng(this.defaults.center.lat, this.defaults.center.lng), this.defaults.center.zoom);
+    }
+
+    this.mapReady.emit(true);
   }
 
+  /**
+   * Get LeafletJS Map
+   *
+   * @return LeafletJS Map
+   */
   getMap() {
     return new Promise<any>((resolve) => {
       if (this.map) {
