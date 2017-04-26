@@ -2,7 +2,7 @@
 
 ## Goal
 
-[Angular 2](https://angular.io) directive for the Leaflet Javascript Library. This software aims to easily embed maps managed by Leaflet on your project.
+[Angular 2](https://angular.io) directive for the [Leaflet](http://leafletjs.com) Javascript Library. This software aims to easily embed maps managed by Leaflet on your project.
 
 ## Master Branch State
 
