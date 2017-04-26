@@ -6,12 +6,14 @@ import { Component } from '@angular/core';
   template:
     `
     <h3>Hello {{name}}</h3>
-    <h5>Center:</h5>
-    <pre>{{center | json}}</pre>
-    <button type='button' class="btn btn-secondary" (click) = "changeCenter('bogota')">Bogotá</button>
-    <button type='button' class="btn btn-info" (click) = "changeCenter('medellin')">Medellín</button>
     <ui-leaflet [lfCenter]="center">
     </ui-leaflet>
+    <div style="margin: 20px 0;">
+      <button type='button' class="btn btn-secondary" (click) = "changeCenter('bogota')">Bogotá</button>
+      <button type='button' class="btn btn-info" (click) = "changeCenter('medellin')">Medellín</button>
+    </div>
+    <h5>Center:</h5>
+    <pre>{{center | json}}</pre>
     `
 })
 export class AppComponent {

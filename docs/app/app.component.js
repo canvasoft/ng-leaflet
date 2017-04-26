@@ -41,7 +41,7 @@ AppComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'leaflet-app',
-        template: "\n    <h3>Hello {{name}}</h3>\n    <h5>Center:</h5>\n    <pre>{{center | json}}</pre>\n    <button type='button' class=\"btn btn-secondary\" (click) = \"changeCenter('bogota')\">Bogot\u00E1</button>\n    <button type='button' class=\"btn btn-info\" (click) = \"changeCenter('medellin')\">Medell\u00EDn</button>\n    <ui-leaflet [lfCenter]=\"center\">\n    </ui-leaflet>\n    "
+        template: "\n    <h3>Hello {{name}}</h3>\n    <ui-leaflet [lfCenter]=\"center\">\n    </ui-leaflet>\n    <div style=\"margin: 20px 0;\">\n      <button type='button' class=\"btn btn-secondary\" (click) = \"changeCenter('bogota')\">Bogot\u00E1</button>\n      <button type='button' class=\"btn btn-info\" (click) = \"changeCenter('medellin')\">Medell\u00EDn</button>\n    </div>\n    <h5>Center:</h5>\n    <pre>{{center | json}}</pre>\n    "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
