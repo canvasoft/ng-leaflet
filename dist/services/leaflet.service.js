@@ -13,7 +13,7 @@ var _errorHeader = '[ui-leaflet-ng2] ';
  *
  * @author Michael Salgado <elesdoar@gmail.com>
  */
-var LeafletService = (function () {
+var LeafletService = /** @class */ (function () {
     function LeafletService() {
     }
     /**
@@ -65,10 +65,10 @@ var LeafletService = (function () {
         }
         return id;
     };
+    LeafletService = __decorate([
+        core_1.Injectable()
+    ], LeafletService);
     return LeafletService;
 }());
-LeafletService = __decorate([
-    core_1.Injectable()
-], LeafletService);
 exports.LeafletService = LeafletService;
 //# sourceMappingURL=leaflet.service.js.map

@@ -1,5 +1,5 @@
-/// <reference types="leaflet" />
 import { LeafletService } from './leaflet.service';
+import L = require('leaflet');
 /**
  * DefaultsService Class.
  * This assign or get default options for ui-leaflet-ng2 map.

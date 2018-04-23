@@ -22,7 +22,7 @@ var leaflet_service_1 = require("../services/leaflet.service");
  *
  * @author Michael Salgado <elesdoar@gmail.com>
  */
-var LeafletComponent = (function () {
+var LeafletComponent = /** @class */ (function () {
     function LeafletComponent(defaultsService, leafletService) {
         this.defaultsService = defaultsService;
         this.leafletService = leafletService;
@@ -59,37 +59,37 @@ var LeafletComponent = (function () {
             }
         });
     };
+    __decorate([
+        core_1.ViewChild('map'),
+        __metadata("design:type", core_1.ElementRef)
+    ], LeafletComponent.prototype, "mapEl", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], LeafletComponent.prototype, "defaults", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], LeafletComponent.prototype, "id", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], LeafletComponent.prototype, "lfCenter", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], LeafletComponent.prototype, "layers", void 0);
+    LeafletComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'ui-leaflet',
+            providers: [defaults_service_1.DefaultsService, leaflet_service_1.LeafletService],
+            styles: ['.angular-leaflet-map { width: 100%; height: 400px; margin-top: 10px; }'],
+            template: "<div #map class=\"angular-leaflet-map\"></div>"
+        }),
+        __metadata("design:paramtypes", [defaults_service_1.DefaultsService, leaflet_service_1.LeafletService])
+    ], LeafletComponent);
     return LeafletComponent;
 }());
-__decorate([
-    core_1.ViewChild('map'),
-    __metadata("design:type", core_1.ElementRef)
-], LeafletComponent.prototype, "mapEl", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], LeafletComponent.prototype, "defaults", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], LeafletComponent.prototype, "id", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], LeafletComponent.prototype, "lfCenter", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], LeafletComponent.prototype, "layers", void 0);
-LeafletComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'ui-leaflet',
-        providers: [defaults_service_1.DefaultsService, leaflet_service_1.LeafletService],
-        styles: ['.angular-leaflet-map { width: 100%; height: 400px; margin-top: 10px; }'],
-        template: "<div #map class=\"angular-leaflet-map\"></div>"
-    }),
-    __metadata("design:paramtypes", [defaults_service_1.DefaultsService, leaflet_service_1.LeafletService])
-], LeafletComponent);
 exports.LeafletComponent = LeafletComponent;
 //# sourceMappingURL=leaflet.component.js.map

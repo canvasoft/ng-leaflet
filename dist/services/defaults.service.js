@@ -11,13 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var leaflet_service_1 = require("./leaflet.service");
+var L = require("leaflet");
 /**
  * DefaultsService Class.
  * This assign or get default options for ui-leaflet-ng2 map.
  *
  * @author Michael Salgado <elesdoar@gmail.com>
  */
-var DefaultsService = (function () {
+var DefaultsService = /** @class */ (function () {
     function DefaultsService(leafletService) {
         this.leafletService = leafletService;
         this.defaultsMap = {};
@@ -146,11 +147,11 @@ var DefaultsService = (function () {
         }
         return mapDefaults;
     };
+    DefaultsService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [leaflet_service_1.LeafletService])
+    ], DefaultsService);
     return DefaultsService;
 }());
-DefaultsService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [leaflet_service_1.LeafletService])
-], DefaultsService);
 exports.DefaultsService = DefaultsService;
 //# sourceMappingURL=defaults.service.js.map

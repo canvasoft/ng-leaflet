@@ -19,34 +19,35 @@ __export(require("./components/leaflet.component"));
 __export(require("./directives/center.directive"));
 __export(require("./pipes/sample.pipe"));
 __export(require("./services/defaults.service"));
-var UiLeafletModule = UiLeafletModule_1 = (function () {
+var UiLeafletModule = /** @class */ (function () {
     function UiLeafletModule() {
     }
+    UiLeafletModule_1 = UiLeafletModule;
     UiLeafletModule.forRoot = function () {
         return {
             ngModule: UiLeafletModule_1,
             providers: [defaults_service_1.DefaultsService]
         };
     };
+    UiLeafletModule = UiLeafletModule_1 = __decorate([
+        core_1.NgModule({
+            imports: [
+                common_1.CommonModule
+            ],
+            declarations: [
+                leaflet_component_1.LeafletComponent,
+                center_directive_1.CenterDirective,
+                sample_pipe_1.SamplePipe
+            ],
+            exports: [
+                leaflet_component_1.LeafletComponent,
+                center_directive_1.CenterDirective,
+                sample_pipe_1.SamplePipe
+            ]
+        })
+    ], UiLeafletModule);
     return UiLeafletModule;
+    var UiLeafletModule_1;
 }());
-UiLeafletModule = UiLeafletModule_1 = __decorate([
-    core_1.NgModule({
-        imports: [
-            common_1.CommonModule
-        ],
-        declarations: [
-            leaflet_component_1.LeafletComponent,
-            center_directive_1.CenterDirective,
-            sample_pipe_1.SamplePipe
-        ],
-        exports: [
-            leaflet_component_1.LeafletComponent,
-            center_directive_1.CenterDirective,
-            sample_pipe_1.SamplePipe
-        ]
-    })
-], UiLeafletModule);
 exports.UiLeafletModule = UiLeafletModule;
-var UiLeafletModule_1;
 //# sourceMappingURL=ui-leaflet-ng2.js.map

@@ -20,7 +20,7 @@ var leaflet_service_1 = require("../services/leaflet.service");
  *
  * @author Michael Salgado <elesdoar@gmail.com>
  */
-var CenterDirective = (function () {
+var CenterDirective = /** @class */ (function () {
     function CenterDirective(el, uiLeaflet, leafletService) {
         this.el = el;
         this.uiLeaflet = uiLeaflet;
@@ -55,19 +55,19 @@ var CenterDirective = (function () {
     CenterDirective.prototype.ngOnChanges = function (changes) {
         this.changeCenter();
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], CenterDirective.prototype, "lfCenter", void 0);
+    CenterDirective = __decorate([
+        core_1.Directive({
+            selector: '[lfCenter]',
+        }),
+        __param(1, core_1.Host()),
+        __metadata("design:paramtypes", [core_1.ElementRef, leaflet_component_1.LeafletComponent,
+            leaflet_service_1.LeafletService])
+    ], CenterDirective);
     return CenterDirective;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], CenterDirective.prototype, "lfCenter", void 0);
-CenterDirective = __decorate([
-    core_1.Directive({
-        selector: '[lfCenter]',
-    }),
-    __param(1, core_1.Host()),
-    __metadata("design:paramtypes", [core_1.ElementRef, leaflet_component_1.LeafletComponent,
-        leaflet_service_1.LeafletService])
-], CenterDirective);
 exports.CenterDirective = CenterDirective;
 //# sourceMappingURL=center.directive.js.map

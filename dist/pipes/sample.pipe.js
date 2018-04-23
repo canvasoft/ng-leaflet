@@ -10,20 +10,20 @@ var core_1 = require("@angular/core");
 /**
  * Transforms any input value
  */
-var SamplePipe = (function () {
+var SamplePipe = /** @class */ (function () {
     function SamplePipe() {
     }
     SamplePipe.prototype.transform = function (value, args) {
         if (args === void 0) { args = null; }
         return value;
     };
+    SamplePipe = __decorate([
+        core_1.Pipe({
+            name: 'samplePipe'
+        }),
+        core_1.Injectable()
+    ], SamplePipe);
     return SamplePipe;
 }());
-SamplePipe = __decorate([
-    core_1.Pipe({
-        name: 'samplePipe'
-    }),
-    core_1.Injectable()
-], SamplePipe);
 exports.SamplePipe = SamplePipe;
 //# sourceMappingURL=sample.pipe.js.map

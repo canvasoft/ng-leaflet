@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LeafletService } from './leaflet.service';
+import L = require('leaflet');
 
 /**
  * DefaultsService Class.
