@@ -10,7 +10,7 @@ import { LeafletService } from '../services/leaflet.service';
  * @author Michael Salgado <elesdoar@gmail.com>
  */
 @Directive({
-  selector: '[lfCenter]',
+  selector: '[lfCenter]'
 })
 export class CenterDirective implements OnInit, OnChanges {
   @Input() lfCenter: any;

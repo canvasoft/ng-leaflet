@@ -16,14 +16,14 @@ import { LeafletService } from '../services/leaflet.service';
 @Component({
   selector: 'ng-leaflet',
   providers: [DefaultsService, LeafletService],
-  styles: ['.angular-leaflet-map { width: 100%; height: 400px; margin-top: 10px; }'],
-  template: `<div #map class="angular-leaflet-map"></div>`
+  styleUrls: ['./leaflet.component.scss'],
+  templateUrl: './leaflet.component.html'
 })
 export class LeafletComponent implements AfterViewInit {
   @ViewChild('map') mapEl: ElementRef;
   private mapReady: EventEmitter<any> = new EventEmitter(true);
 
-  private map: any;
+  private map: L.Map;
   @Input() private defaults: any;
   @Input() private id: string;
   @Input() private lfCenter: any;
