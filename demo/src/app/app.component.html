@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h3>Hello {{name}}</h3>
+<ui-leaflet [lfCenter]="center">
+</ui-leaflet>
+<div style="margin: 20px 0;">
+  <button type='button' class="btn btn-secondary" (click) = "changeCenter('bogota')">Bogotá</button>
+  <button type='button' class="btn btn-info" (click) = "changeCenter('medellin')">Medellín</button>
+</div>
+<h5>Center:</h5>
+<pre>{{center | json}}</pre>
+
+<router-outlet></router-outlet>
