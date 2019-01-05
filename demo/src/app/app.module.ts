@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgLeafletModule } from 'ng-leaflet';
+import { NgLeafletModule } from '@angular-ui/ng-leaflet';
 
 @NgModule({
   declarations: [

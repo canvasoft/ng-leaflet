@@ -4,7 +4,7 @@ import * as L from 'leaflet';
 
 /**
  * DefaultsService Class.
- * This assign or get default options for ui-leaflet-ng2 map.
+ * This assign or get default options for ng-leaflet map.
  *
  * @author Michael Salgado <elesdoar@gmail.com>
  */
@@ -71,25 +71,25 @@ export class DefaultsService {
   }
 
   /**
-   * Get defaults for a ui-leaflet-ng2 map.
+   * Get defaults for a ng-leaflet map.
    *
    * @param scopeId   Map id. If it is null, will be setted as 'main'
    * @returns         Initial defaults.
    */
-  getDefaults(scopeId:string = null) {
-    let mapId = this.leafletService.obtainEffectiveMapId(this.defaultsMap, scopeId);
+  getDefaults(scopeId: string = null) {
+    const mapId = this.leafletService.obtainEffectiveMapId(this.defaultsMap, scopeId);
     return this.defaultsMap[mapId];
   }
 
   /**
-   * Set defaults options for a ui-leaflet-ng2 map.
+   * Set defaults options for a ng-leaflet map.
    *
    * @param userDefaults   Defaults setted by the user.
    * @param scopeId        Map id. If it is null, will be setted as 'main'
    * @returns              New defaults.
    */
-  setDefaults(userDefaults:any, scopeId:string) {
-    let newDefaults = this._getDefaults();
+  setDefaults(userDefaults: any, scopeId: string) {
+    const newDefaults = this._getDefaults();
     const isDefined = this.leafletService.isDefined;
 
     if (isDefined(userDefaults)) {
@@ -107,12 +107,12 @@ export class DefaultsService {
    * @param scopeId   Map id. If it is null, will be setted as 'main'
    * @returns         LeafletJS map creation options.
    */
-  getMapCreationDefaults(scopeId:string) {
+  getMapCreationDefaults(scopeId: string) {
     const mapId = this.leafletService.obtainEffectiveMapId(this.defaultsMap, scopeId);
     const d = this.defaultsMap[mapId];
     const isDefined = this.leafletService.isDefined;
 
-    let mapDefaults = <any>{
+    const mapDefaults = <any>{
       maxZoom: d.maxZoom,
       keyboard: d.keyboard,
       dragging: d.dragging,
@@ -144,7 +144,7 @@ export class DefaultsService {
     }
 
     if (d.map && Object.keys(d.map).length > 0) {
-      for (let option of Object.keys(d.map)) {
+      for (const option of Object.keys(d.map)) {
         mapDefaults[option] = d.map[option];
       }
     }

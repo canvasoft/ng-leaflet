@@ -17,14 +17,6 @@
     "lib": [
       "es2018",
       "dom"
-    ],
-    "paths": {
-      "ng-leaflet": [
-        "dist/ng-leaflet"
-      ],
-      "ng-leaflet/*": [
-        "dist/ng-leaflet/*"
-      ]
-    }
+    ]
   }
 }

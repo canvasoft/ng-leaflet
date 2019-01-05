@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 
-const _errorHeader = '[ui-leaflet-ng2] ';
+const _errorHeader = '[ng-leaflet] ';
 
 /**
- * Helpers for ui-leaflet-ng2 map.
+ * Helpers for ng-leaflet map.
  *
  * @author Michael Salgado <elesdoar@gmail.com>
  */
@@ -35,9 +35,9 @@ export class LeafletService {
    * @param d    Defaults from defaults service.
    * @returns    Map ID.
    */
-  obtainEffectiveMapId(d:any, mapId:string) {
+  obtainEffectiveMapId(d: any, mapId: string) {
     let id;
-    let keys = Object.keys(d);
+    const keys = Object.keys(d);
 
     if (!this.isDefined(mapId)) {
       if (keys.length === 0 || (keys.length === 1 && keys[0] === 'main')) {

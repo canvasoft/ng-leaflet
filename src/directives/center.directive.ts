@@ -5,7 +5,7 @@ import { LeafletService } from '../services/leaflet.service';
 
 
 /**
- * Center directive for ui-leaflet-ng2.
+ * Center directive for ng-leaflet.
  *
  * @author Michael Salgado <elesdoar@gmail.com>
  */
@@ -15,13 +15,13 @@ import { LeafletService } from '../services/leaflet.service';
 export class CenterDirective implements OnInit, OnChanges {
   @Input() lfCenter: any;
 
-  constructor(private el: ElementRef, @Host() private uiLeaflet:LeafletComponent,
+  constructor(private el: ElementRef, @Host() private uiLeaflet: LeafletComponent,
     private leafletService: LeafletService) {
   }
 
   private changeCenter() {
     const leafletService: LeafletService = this.leafletService;
-    let center = this.lfCenter;
+    const center = this.lfCenter;
 
     if (leafletService.isObject(center) && leafletService.isDefined(center.lat) &&
       leafletService.isDefined(center.lng) && leafletService.isDefined(center.zoom)) {
@@ -38,7 +38,7 @@ export class CenterDirective implements OnInit, OnChanges {
         });
       });
     } else {
-      console.warn('[ui-leaflet-ng2] - Center is not valid');
+      console.warn('[ng-leaflet] - Center is not valid');
     }
   }
 
@@ -48,7 +48,7 @@ export class CenterDirective implements OnInit, OnChanges {
     this.changeCenter();
   }
 
-  ngOnChanges(changes:any) {
+  ngOnChanges(changes: any) {
     this.changeCenter();
   }
 }

@@ -62,6 +62,7 @@
               "demo/src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/leaflet/dist/leaflet.css",
               "demo/src/styles.scss"
             ],
@@ -132,8 +133,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "demo/src/tsconfig.app.json",
-              "demo/src/tsconfig.spec.json"
+              "demo/tsconfig.app.json",
+              "demo/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

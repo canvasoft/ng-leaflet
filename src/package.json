@@ -1,6 +1,16 @@
 {
   "name": "@angular-ui/ng-leaflet",
   "version": "0.0.1",
+  "author": "https://github.com/angular-ui/ng-leaflet/graphs/contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular-ui/ng-leaflet.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angular-ui/ng-leaflet/issues"
+  },
+  "homepage": "https://github.com/angular-ui/ng-leaflet#readme",
   "peerDependencies": {
     "@angular/common": "^7.1.0",
     "@angular/core": "^7.1.0"

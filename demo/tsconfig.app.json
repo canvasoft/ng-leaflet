@@ -1,9 +1,16 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../out-tsc/app",
-    "types": []
+    "baseUrl": "./",
+    "outDir": "temp",
+    "types": [],
+    "paths": {
+      "@angular-ui/ng-leaflet": ["../src/index"]
+    }
   },
+  "include": [
+    "./src/**/*.ts"
+  ],
   "exclude": [
     "test.ts",
     "**/*.spec.ts"

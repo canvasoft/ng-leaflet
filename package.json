@@ -7,12 +7,16 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "demo:serve": "ng serve demo --host 0.0.0.0",
+    "demo:lint": "ng lint demo",
+    "demo:build": "yarn demo:lint && ng build demo --prod"
   },
   "engines": {
     "node": ">=8.9.0",
     "yarn": ">=1.3.0 <2.0.0"
   },
+  "license": "MIT",
   "dependencies": {
     "@angular/animations": "~7.1.0",
     "@angular/common": "~7.1.0",
@@ -21,7 +25,7 @@
     "@angular/forms": "~7.1.0",
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
-    "@angular/router": "~7.1.0",
+    "@angular/router": "~7.1.0",    
     "core-js": "^2.5.4",
     "leaflet": "^1.4.0",
     "rxjs": "~6.3.3",
@@ -38,6 +42,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/leaflet": "^1.2.14",
     "@types/node": "^10.12.18",
+    "bootstrap": "^4.2.1",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",

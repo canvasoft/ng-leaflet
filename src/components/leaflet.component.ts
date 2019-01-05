@@ -1,27 +1,26 @@
-import { Component, ElementRef, EventEmitter, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, ViewChild, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
 
 import { DefaultsService } from '../services/defaults.service';
 import { LeafletService } from '../services/leaflet.service';
 
 /**
- * Main ui-leaflet-ng2 component.
+ * Main ng-leaflet component.
  *
  * <pre>
- *   <ui-leaflet></ui-leaflet>
+ *   <ng-leaflet></ng-leaflet>
  * </pre>
  *
  * @author Michael Salgado <elesdoar@gmail.com>
  */
 @Component({
-  // moduleId: module.id,
-  selector: 'ui-leaflet',
+  selector: 'ng-leaflet',
   providers: [DefaultsService, LeafletService],
   styles: ['.angular-leaflet-map { width: 100%; height: 400px; margin-top: 10px; }'],
   template: `<div #map class="angular-leaflet-map"></div>`
 })
-export class LeafletComponent {
-  @ViewChild('map') mapEl:ElementRef;
+export class LeafletComponent implements AfterViewInit {
+  @ViewChild('map') mapEl: ElementRef;
   private mapReady: EventEmitter<any> = new EventEmitter(true);
 
   private map: any;
