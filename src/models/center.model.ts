@@ -4,7 +4,7 @@ export interface ILeafletCenter {
   lat: number;
   lng: number;
   zoom?: number;
-  autoDiscover?: boolean
+  autoDiscover?: boolean;
 }
 
 export class LeafletCenter implements ILeafletCenter {
