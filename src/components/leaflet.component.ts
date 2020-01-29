@@ -20,7 +20,7 @@ import { LeafletService } from '../services/leaflet.service';
   templateUrl: './leaflet.component.html'
 })
 export class LeafletComponent implements AfterViewInit {
-  @ViewChild('map') mapEl: ElementRef;
+  @ViewChild('map', { static: true }) mapEl: ElementRef;
   private mapReady: EventEmitter<any> = new EventEmitter(true);
 
   private map: L.Map;

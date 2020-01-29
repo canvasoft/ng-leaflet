@@ -9,6 +9,7 @@ export * from './components/leaflet.component';
 export * from './directives/center.directive';
 export * from './pipes/sample.pipe';
 export * from './services/defaults.service';
+export * from './models';
 
 @NgModule({
   imports: [

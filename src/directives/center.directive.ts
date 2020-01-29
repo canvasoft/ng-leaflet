@@ -2,6 +2,7 @@ import { Directive, ElementRef, Input, OnChanges, OnInit, Host } from '@angular/
 
 import { LeafletComponent } from '../components/leaflet.component';
 import { LeafletService } from '../services/leaflet.service';
+import { LeafletCenter } from '../models/center.model';
 
 
 /**
@@ -13,7 +14,7 @@ import { LeafletService } from '../services/leaflet.service';
   selector: '[lfCenter]'
 })
 export class CenterDirective implements OnInit, OnChanges {
-  @Input() lfCenter: any;
+  @Input() lfCenter: LeafletCenter;
 
   constructor(private el: ElementRef, @Host() private uiLeaflet: LeafletComponent,
     private leafletService: LeafletService) {
@@ -23,8 +24,7 @@ export class CenterDirective implements OnInit, OnChanges {
     const leafletService: LeafletService = this.leafletService;
     const center = this.lfCenter;
 
-    if (leafletService.isObject(center) && leafletService.isDefined(center.lat) &&
-      leafletService.isDefined(center.lng) && leafletService.isDefined(center.zoom)) {
+    if (this.lfCenter.isValid()) {
       this.uiLeaflet.getMap().then((map) => {
         map.setView([center.lat, center.lng], center.zoom);
 
