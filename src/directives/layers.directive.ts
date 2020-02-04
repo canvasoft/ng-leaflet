@@ -1,4 +1,7 @@
-import { Directive, OnInit, OnChanges, SimpleChanges, DoCheck, OnDestroy, IterableDiffer, Input, NgZone, Host, IterableDiffers, AfterViewInit } from '@angular/core';
+import {
+  Directive, OnInit, DoCheck, OnDestroy, IterableDiffer,
+  Input, NgZone, Host, IterableDiffers
+} from '@angular/core';
 import { ILeafletLayer } from '../models';
 import { LeafletComponent } from '../components/leaflet.component';
 import { isNullOrUndefined } from 'util';
@@ -37,9 +40,9 @@ export class LayersDirective implements OnInit, OnDestroy, DoCheck {
   }
 
   private async updateLayers() {
-    if(!isNullOrUndefined(this.lysDiffer)) {
+    if (!isNullOrUndefined(this.lysDiffer)) {
       const changes = this.lysDiffer.diff(this.layers);
-      if(isNullOrUndefined(changes)) {
+      if (isNullOrUndefined(changes)) {
         return;
       }
       console.log('Updating layers: ', changes);
@@ -47,7 +50,7 @@ export class LayersDirective implements OnInit, OnDestroy, DoCheck {
       this.zone.runOutsideAngular(async () => {
         const map = await this.uiLeaflet.getMap();
 
-        if(isNullOrUndefined(map)) {
+        if (isNullOrUndefined(map)) {
           return;
         }
 
@@ -66,11 +69,11 @@ export class LayersDirective implements OnInit, OnDestroy, DoCheck {
     this.zone.runOutsideAngular(async () => {
       const map = await this.uiLeaflet.getMap();
 
-      if(isNullOrUndefined(layers)) {
+      if (isNullOrUndefined(layers)) {
         return;
       }
 
-      if(layers.length > 0) {
+      if (layers.length > 0) {
         map.eachLayer((ly: Layer) => {
           ly.remove();
         });

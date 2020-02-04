@@ -4,7 +4,7 @@ export interface ILeafletLayer {
   id: string;
   name: string;
   enabled: boolean;
-  isBaselayer: boolean,
+  isBaselayer: boolean;
   options?: any;
 
   getLayer(): Layer;
@@ -22,9 +22,9 @@ export class LeafletTileLayer implements ILeafletLayer {
     public isBaselayer = false,
     public options?: any
   ) {
-    switch(this.type) {
+    switch (this.type) {
       case 'tile':
-				this.layer = tileLayer(this.url,  this.options);
+        this.layer = tileLayer(this.url,  this.options);
         break;
 
       case 'wms':
