@@ -1,7 +1,6 @@
 import { Directive, ElementRef, Input, OnChanges, OnInit, Host } from '@angular/core';
 
 import { LeafletComponent } from '../components/leaflet.component';
-import { LeafletService } from '../services/leaflet.service';
 import { LeafletCenter } from '../models/center.model';
 
 
@@ -16,25 +15,21 @@ import { LeafletCenter } from '../models/center.model';
 export class CenterDirective implements OnInit, OnChanges {
   @Input() lfCenter: LeafletCenter;
 
-  constructor(private el: ElementRef, @Host() private uiLeaflet: LeafletComponent,
-    private leafletService: LeafletService) {
+  constructor(private el: ElementRef, @Host() private uiLeaflet: LeafletComponent) {
   }
 
-  private changeCenter() {
-    const leafletService: LeafletService = this.leafletService;
+  private async changeCenter() {
     const center = this.lfCenter;
 
     if (this.lfCenter.isValid()) {
-      this.uiLeaflet.getMap().then((map) => {
-        map.setView([center.lat, center.lng], center.zoom);
-
-        map.on('moveend', () => {
-          Object.assign(center, {
-            lat: map.getCenter().lat,
-            lng: map.getCenter().lng,
-            zoom: map.getZoom(),
-            autoDiscover: false
-          });
+      const map = await this.uiLeaflet.getMap();
+      map.setView([center.lat, center.lng], center.zoom);
+      map.on('moveend', () => {
+        Object.assign(center, {
+          lat: map.getCenter().lat,
+          lng: map.getCenter().lng,
+          zoom: map.getZoom(),
+          autoDiscover: false
         });
       });
     } else {

@@ -4,6 +4,7 @@ import { LeafletComponent } from './components/leaflet.component';
 import { CenterDirective } from './directives/center.directive';
 import { SamplePipe } from './pipes/sample.pipe';
 import { DefaultsService } from './services/defaults.service';
+import { LayersDirective } from './directives/layers.directive';
 
 export * from './components/leaflet.component';
 export * from './directives/center.directive';
@@ -18,11 +19,13 @@ export * from './models';
   declarations: [
     LeafletComponent ,
     CenterDirective,
+    LayersDirective,
     SamplePipe
   ],
   exports: [
     LeafletComponent,
     CenterDirective,
+    LayersDirective,
     SamplePipe
   ]
 })

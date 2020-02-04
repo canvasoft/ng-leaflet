@@ -54,8 +54,8 @@ export class LeafletComponent implements AfterViewInit {
    *
    * @return LeafletJS Map
    */
-  getMap() {
-    return new Promise<any>((resolve) => {
+  getMap(): Promise<L.Map> {
+    return new Promise<L.Map>((resolve) => {
       if (this.map) {
         resolve(this.map);
       } else {
