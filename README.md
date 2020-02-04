@@ -11,11 +11,12 @@ Please note the master branch is currently in a "in-progress state" and is not s
 ## Features
 
 - [x] Map Options
+- [x] Layers
 - [x] Dynamic Center
+- [x] Markercluster
 
 ## TODO
 
-- [ ] Layers
 - [ ] Markers
 - [ ] GeoJSON
 - [ ] Bounds
@@ -78,9 +79,9 @@ Once your library is imported, you can use its components, directives and pipes 
 
 ## Documentation:
 
-![UI Leaflet for Angular 2](demo/src/assets/images/ng-leaflet.png)
+![UI Leaflet for Angular 2](demo/src/assets/images/ui-leaflet-ng2.png)
 
-[https://angular-ui.github.io/ng-leaflet/docs/](https://angular-ui.github.io/ng-leaflet/docs/)
+[Demo](https://angular-ui.github.io/ng-leaflet/demo/dist/)
 
 ## License
 
