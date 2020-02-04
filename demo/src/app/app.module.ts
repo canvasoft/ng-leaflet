@@ -4,10 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgLeafletModule } from '@angular-ui/ng-leaflet';
+import { MarkerClusterExampleComponent } from './examples/markercluster/markercluster.component';
+import { HomeExampleComponent } from './examples/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MarkerClusterExampleComponent,
+    HomeExampleComponent
   ],
   imports: [
     BrowserModule,

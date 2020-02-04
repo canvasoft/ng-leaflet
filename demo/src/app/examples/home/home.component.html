@@ -1,0 +1,9 @@
+<ng-leaflet [lfCenter]="center" [lfLayers]="layers">
+</ng-leaflet>
+<div class="lf-demo-btns" style="margin: 20px 0;">
+  <button type='button' class="btn btn-secondary" (click) = "changeCenter('bogota')">Bogotá</button>
+  <button type='button' class="btn btn-info" (click) = "changeCenter('medellin')">Medellín</button>
+  <button type='button' class="btn btn-warning" (click) = "changeLayers()">Change layers</button>
+</div>
+<h5>Center:</h5>
+<pre>{{center | json}}</pre>
