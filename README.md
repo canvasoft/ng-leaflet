@@ -31,7 +31,7 @@ Please note the master branch is currently in a "in-progress state" and is not s
 To install ng-leaflet, run:
 
 ```bash
-$ npm install angular-ui/ng-leaflet#master --save
+$ npm install canvasoft/ng-leaflet#master --save
 ```
 
 ## How to use it
@@ -39,7 +39,7 @@ $ npm install angular-ui/ng-leaflet#master --save
 Once you have published your library to npm, you can import ng-leaflet in any Angular application by running:
 
 ```bash
-$ npm install angular-ui/ng-leaflet#master --save
+$ npm install canvasoft/ng-leaflet#master --save
 ```
 
 and then from your Angular `AppModule`:
@@ -81,7 +81,7 @@ Once your library is imported, you can use its components, directives and pipes 
 
 ![UI Leaflet for Angular 2](demo/src/assets/images/ui-leaflet-ng2.png)
 
-[Demo](https://angular-ui.github.io/ng-leaflet/demo/dist/)
+[Demo](https://canvasoft.github.io/ng-leaflet/demo/dist/)
 
 ## License
 

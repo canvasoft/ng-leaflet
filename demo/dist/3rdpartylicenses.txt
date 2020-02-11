@@ -23,9 +23,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-@angular-ui/ng-leaflet
-MIT
-
 @angular/common
 MIT
 
@@ -36,6 +33,9 @@ MIT
 MIT
 
 @angular/router
+MIT
+
+@canvasoft/ng-leaflet
 MIT
 
 bootstrap

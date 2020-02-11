@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { addressPoints } from './realworld.10000';
-import { LeafletMarkerClusterLayer, LeafletTileLayer, ILeafletLayer, LeafletCenter } from '@angular-ui/ng-leaflet';
+import { LeafletMarkerClusterLayer, LeafletTileLayer, ILeafletLayer, LeafletCenter } from '@canvasoft/ng-leaflet';
 import { Marker, LatLng } from 'leaflet';
 import 'leaflet.markercluster';
 

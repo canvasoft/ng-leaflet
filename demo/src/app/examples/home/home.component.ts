@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { LeafletCenter, LeafletTileLayer } from '@angular-ui/ng-leaflet';
+import { LeafletCenter, LeafletTileLayer } from '@canvasoft/ng-leaflet';
 
 @Component({
   selector: 'dm-home-demo',
