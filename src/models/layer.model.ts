@@ -1,3 +1,4 @@
+import 'leaflet.markercluster';
 import { Layer, tileLayer, markerClusterGroup, MarkerClusterGroup, Marker } from 'leaflet';
 
 export interface ILeafletLayer {

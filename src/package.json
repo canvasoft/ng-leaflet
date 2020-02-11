@@ -1,18 +1,24 @@
 {
-  "name": "@angular-ui/ng-leaflet",
-  "version": "0.0.1",
-  "author": "https://github.com/angular-ui/ng-leaflet/graphs/contributors",
+  "name": "@canvasoft/ng-leaflet",
+  "version": "0.0.2",
+  "author": "https://github.com/canvasoft/ng-leaflet/graphs/contributors",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/angular-ui/ng-leaflet.git"
+    "url": "git+https://github.com/canvasoft/ng-leaflet.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/angular-ui/ng-leaflet/issues"
+    "url": "https://github.com/canvasoft/ng-leaflet/issues"
   },
-  "homepage": "https://github.com/angular-ui/ng-leaflet#readme",
+  "homepage": "https://github.com/canvasoft/ng-leaflet#readme",
   "peerDependencies": {
     "@angular/common": "8.2.14",
-    "@angular/core": "8.2.14"
+    "@angular/core": "8.2.14",
+    "leaflet": "1.6.0"
+  },
+
+  "devDependencies": {
+    "@types/leaflet": "1.5.8",
+    "@types/leaflet.markercluster": "^1.4.2"
   }
 }

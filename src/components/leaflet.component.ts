@@ -30,6 +30,7 @@ export class LeafletComponent implements AfterViewInit {
   @Input() private layers: any;
 
   constructor(public defaultsService: DefaultsService, private leafletService: LeafletService) {
+    L.Icon.Default.prototype.options.imagePath = 'https://unpkg.com/leaflet@1.6.0/dist/images/';
   }
 
   ngAfterViewInit() {
