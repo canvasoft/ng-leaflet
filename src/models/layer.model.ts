@@ -1,5 +1,6 @@
 import 'leaflet.markercluster';
-import { Layer, tileLayer, markerClusterGroup, MarkerClusterGroup, Marker } from 'leaflet';
+import { Layer, tileLayer, markerClusterGroup, MarkerClusterGroup, Marker, esri } from 'leaflet';
+import { BasemapLayer, Basemaps } from 'esri-leaflet';
 
 export interface ILeafletLayer {
   id: string;
@@ -68,5 +69,24 @@ export class LeafletMarkerClusterLayer implements ILeafletLayer {
     this.layer.clearLayers();
     this.markers = markers;
     this.layer.addLayers(markers);
+  }
+}
+
+export class LeafletEsriBaselayer implements ILeafletLayer {
+  private layer: BasemapLayer;
+  public enabled = true;
+  public isBaselayer = true;
+
+  constructor(
+    public id: string,
+    public name: string,
+    public basemap: Basemaps = 'Streets',
+    public options?: any
+  ) {
+    this.layer = new BasemapLayer(this.basemap);
+  }
+
+  getLayer(): Layer {
+    return this.layer;
   }
 }
