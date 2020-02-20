@@ -20,8 +20,8 @@ export class EsriBaselayersExampleComponent implements OnInit {
 
   changeLayer(basemap: Basemaps): void {
     const baseLayer = new LeafletEsriBaselayer('esriBaselayer', 'Esri Baselayer', basemap);
-    if(basemap === 'DarkGray') {
-      console.log('[EsriBaselayersExampleComponent] - With labels')
+    if (basemap === 'DarkGray') {
+      console.log('[EsriBaselayersExampleComponent] - With labels');
       const labelLayer = new LeafletEsriBaselayer('esriBaselayerLabels', 'Esri Baselayer Labels', 'DarkGrayLabels');
       this.layers = [baseLayer, labelLayer];
     } else {
