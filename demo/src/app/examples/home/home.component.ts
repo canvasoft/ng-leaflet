@@ -19,7 +19,7 @@ export class HomeExampleComponent implements OnInit {
       'layer1',
       'Openstreet Maps',
       'tile',
-      'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       false,
       {
         maxZoom: 18,
@@ -31,7 +31,7 @@ export class HomeExampleComponent implements OnInit {
       'layer2',
       'Open Cycle Map',
       'tile',
-      'http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png'
+      'https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png'
     );
   }
 
