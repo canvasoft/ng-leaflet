@@ -42,10 +42,10 @@ export class DefaultsService {
         }
       },
       nominatim: {
-        server: ' http://nominatim.openstreetmap.org/search'
+        server: ' https://nominatim.openstreetmap.org/search'
       },
       crs: L.CRS.EPSG3857,
-      tileLayer: '//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      tileLayer: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       tileLayerOptions: {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       },
@@ -124,9 +124,9 @@ export class DefaultsService {
       crs: d.crs,
       trackResize: d.trackResize,
       minZoom: undefined,
-      zoomAnimation: undefined,
-      fadeAnimation: undefined,
-      markerZoomAnimation: undefined
+      zoomAnimation: true,
+      fadeAnimation: true,
+      markerZoomAnimation: true
     };
 
     if (this.leafletService.isDefined(d.minZoom)) {
