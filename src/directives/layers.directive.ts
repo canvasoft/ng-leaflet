@@ -4,7 +4,6 @@ import {
 } from '@angular/core';
 import { ILeafletLayer } from '../models';
 import { LeafletComponent } from '../components/leaflet.component';
-import { isNullOrUndefined } from 'util';
 import { Layer } from 'leaflet';
 
 /**
@@ -39,10 +38,10 @@ export class LayersDirective implements OnInit, OnDestroy, DoCheck {
     this.updateLayers();
   }
 
-  private async updateLayers() {
-    if (!isNullOrUndefined(this.lysDiffer)) {
+  private updateLayers(): void {
+    if (this.lysDiffer !== undefined && this.lysDiffer !== null) {
       const changes = this.lysDiffer.diff(this.layers);
-      if (isNullOrUndefined(changes)) {
+      if (changes === undefined || changes === null) {
         return;
       }
       console.log('Updating layers: ', changes);
@@ -50,7 +49,7 @@ export class LayersDirective implements OnInit, OnDestroy, DoCheck {
       this.zone.runOutsideAngular(async () => {
         const map = await this.uiLeaflet.getMap();
 
-        if (isNullOrUndefined(map)) {
+        if (map === undefined || map === null) {
           return;
         }
 
@@ -65,11 +64,11 @@ export class LayersDirective implements OnInit, OnDestroy, DoCheck {
     }
   }
 
-  private async addLayers(layers: ILeafletLayer[]) {
+  private addLayers(layers: ILeafletLayer[]): void {
     this.zone.runOutsideAngular(async () => {
       const map = await this.uiLeaflet.getMap();
 
-      if (isNullOrUndefined(layers)) {
+      if (layers === null || layers === undefined) {
         return;
       }
 

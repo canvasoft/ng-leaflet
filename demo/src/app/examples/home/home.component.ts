@@ -35,7 +35,7 @@ export class HomeExampleComponent implements OnInit {
     );
   }
 
-  changeCenter(city: string) {
+  changeCenter(city: string): void {
     switch (city) {
       case 'bogota':
         this.center = new LeafletCenter(4.624335, -74.063644, 12);
@@ -47,8 +47,8 @@ export class HomeExampleComponent implements OnInit {
     console.log('Changing center to ' + city);
   }
 
-  changeLayers() {
-    this.layers = this.layers.indexOf(this.layer1) === -1 ? [this.layer1] : [this.layer2];
+  changeLayers(): void {
+    this.layers = !this.layers.includes(this.layer1) ? [this.layer1] : [this.layer2];
   }
 
   ngOnInit(): void {

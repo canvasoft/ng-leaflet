@@ -18,7 +18,7 @@ export class CenterDirective implements OnInit, OnChanges {
   constructor(private el: ElementRef, @Host() private uiLeaflet: LeafletComponent) {
   }
 
-  private async changeCenter() {
+  private async changeCenter(): Promise<void> {
     const center = this.lfCenter;
 
     if (this.lfCenter.isValid()) {
@@ -37,13 +37,13 @@ export class CenterDirective implements OnInit, OnChanges {
     }
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     console.log('Parent:', this.uiLeaflet);
     console.log('Lf Center:', this.lfCenter);
     this.changeCenter();
   }
 
-  ngOnChanges(changes: any) {
+  ngOnChanges(): void {
     this.changeCenter();
   }
 }

@@ -6,7 +6,8 @@
     "types": [],
     "paths": {
       "@canvasoft/ng-leaflet": ["../src/index"]
-    }
+    },
+    "sourceMap": true
   },
   "include": [
     "./src/**/*.ts"

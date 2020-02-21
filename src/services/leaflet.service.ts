@@ -15,7 +15,7 @@ export class LeafletService {
    * @param object    A object.
    * @returns         true if the object is defined.
    */
-  isDefined(object: any) {
+  isDefined(object: any): boolean {
     return object !== undefined && object !== null;
   }
 
@@ -25,7 +25,7 @@ export class LeafletService {
    * @param object    Any.
    * @returns         true if the param is defined and object.
    */
-  isObject(object: any) {
+  isObject(object: any): boolean {
     return object !== null && typeof object === 'object';
   }
 
@@ -35,8 +35,8 @@ export class LeafletService {
    * @param d    Defaults from defaults service.
    * @returns    Map ID.
    */
-  obtainEffectiveMapId(d: any, mapId: string) {
-    let id;
+  obtainEffectiveMapId(d: any, mapId: string): any {
+    let id: string;
     const keys = Object.keys(d);
 
     if (!this.isDefined(mapId)) {

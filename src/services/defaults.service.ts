@@ -21,7 +21,7 @@ export class DefaultsService {
    *
    * @returns   Initial defaults.
    */
-  private _getDefaults() {
+  private _getDefaults(): any {
     return {
       keyboard: true,
       dragging: true,
@@ -66,7 +66,7 @@ export class DefaultsService {
   /**
    * Reset defaultsMap field.
    */
-  reset() {
+  reset(): void {
     this.defaultsMap = {};
   }
 
@@ -76,7 +76,7 @@ export class DefaultsService {
    * @param scopeId   Map id. If it is null, will be setted as 'main'
    * @returns         Initial defaults.
    */
-  getDefaults(scopeId: string = null) {
+  getDefaults(scopeId: string = null): any {
     const mapId = this.leafletService.obtainEffectiveMapId(this.defaultsMap, scopeId);
     return this.defaultsMap[mapId];
   }
@@ -88,11 +88,10 @@ export class DefaultsService {
    * @param scopeId        Map id. If it is null, will be setted as 'main'
    * @returns              New defaults.
    */
-  setDefaults(userDefaults: any, scopeId: string) {
+  setDefaults(userDefaults: any, scopeId: string): any {
     const newDefaults = this._getDefaults();
-    const isDefined = this.leafletService.isDefined;
 
-    if (isDefined(userDefaults)) {
+    if (this.leafletService.isDefined(userDefaults)) {
       Object.assign(newDefaults, userDefaults);
     }
 
@@ -107,12 +106,11 @@ export class DefaultsService {
    * @param scopeId   Map id. If it is null, will be setted as 'main'
    * @returns         LeafletJS map creation options.
    */
-  getMapCreationDefaults(scopeId: string) {
+  getMapCreationDefaults(scopeId: string): any {
     const mapId = this.leafletService.obtainEffectiveMapId(this.defaultsMap, scopeId);
     const d = this.defaultsMap[mapId];
-    const isDefined = this.leafletService.isDefined;
 
-    const mapDefaults = <any>{
+    const mapDefaults = {
       maxZoom: d.maxZoom,
       keyboard: d.keyboard,
       dragging: d.dragging,
@@ -125,21 +123,25 @@ export class DefaultsService {
       worldCopyJump: d.worldCopyJump,
       crs: d.crs,
       trackResize: d.trackResize,
+      minZoom: undefined,
+      zoomAnimation: undefined,
+      fadeAnimation: undefined,
+      markerZoomAnimation: undefined
     };
 
-    if (isDefined(d.minZoom)) {
+    if (this.leafletService.isDefined(d.minZoom)) {
       mapDefaults.minZoom = d.minZoom;
     }
 
-    if (isDefined(d.zoomAnimation)) {
+    if (this.leafletService.isDefined(d.zoomAnimation)) {
       mapDefaults.zoomAnimation = d.zoomAnimation;
     }
 
-    if (isDefined(d.fadeAnimation)) {
+    if (this.leafletService.isDefined(d.fadeAnimation)) {
       mapDefaults.fadeAnimation = d.fadeAnimation;
     }
 
-    if (isDefined(d.markerZoomAnimation)) {
+    if (this.leafletService.isDefined(d.markerZoomAnimation)) {
       mapDefaults.markerZoomAnimation = d.markerZoomAnimation;
     }
 

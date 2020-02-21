@@ -1,5 +1,5 @@
 import 'leaflet.markercluster';
-import { Layer, tileLayer, markerClusterGroup, MarkerClusterGroup, Marker, esri, Content, Popup, PopupOptions } from 'leaflet';
+import { Layer, tileLayer, markerClusterGroup, MarkerClusterGroup, Marker, Content, Popup, PopupOptions } from 'leaflet';
 
 /**
  * Base interface for Leaflet Layers.

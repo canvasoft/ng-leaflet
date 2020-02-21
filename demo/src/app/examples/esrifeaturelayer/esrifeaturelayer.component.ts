@@ -27,10 +27,11 @@ export class EsriFeaturelayersExampleComponent implements OnInit {
       'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Earthquakes_Since1970/MapServer/0'
     );
 
-    popupFeatureLayer.bindPopup((layer) => {
+    popupFeatureLayer.bindPopup((layer: any) => {
       return Util.template(
         '<p>Earthquake <strong>{name}</strong> occured on {mo}/{dy}/{year_}. It had a magnitude of {magnitude}.</p>',
-        (layer as any).feature.properties
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
+        layer.feature.properties
       );
     });
 

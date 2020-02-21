@@ -1,0 +1,6 @@
+node_modules/
+src/karma.conf.js
+e2e/protractor.conf.js
+dist/
+demo/dist/
+demo/src/karma.conf.js

@@ -33,7 +33,7 @@ export class LeafletComponent implements AfterViewInit {
     L.Icon.Default.prototype.options.imagePath = 'https://unpkg.com/leaflet@1.6.0/dist/images/';
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     console.log('ID', this.id);
     this.defaults = this.defaultsService.setDefaults(this.defaults, this.id);
     this.map = new L.Map(this.mapEl.nativeElement, this.defaultsService.getMapCreationDefaults(this.id));
