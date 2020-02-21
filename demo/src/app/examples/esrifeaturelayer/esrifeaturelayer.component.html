@@ -1,0 +1,16 @@
+<h3>ESRI Featurelayer Example</h3>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-sm-12 col-md-9">
+    <h4>Simple Featurelayer</h4>
+    <ng-leaflet [lfCenter]="center" [lfLayers]="layers"></ng-leaflet>
+  </div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+  <div class="col-md-3"></div>
+  <div class="col-sm-12 col-md-9">
+    <h4>Custom popups</h4>
+    <ng-leaflet id="esri-fl-popup" [lfCenter]="center" [lfLayers]="popupExampleLayers"></ng-leaflet>
+  </div>
+</div>

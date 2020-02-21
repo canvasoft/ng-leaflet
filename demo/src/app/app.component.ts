@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'ng-leaflet';
 
-  name = 'UI Leaflet 2';
+  name = 'NG Leaflet 2';
 
   ngOnInit(): void {
   }

@@ -27,7 +27,7 @@ export abstract class AbstractLeafletLayer implements ILeafletLayer {
   abstract getLayer(): Layer;
 
   public bindPopup(content: ((layer: Layer) => Content) | Content | Popup, options?: PopupOptions): void {
-    if(this.getLayer()) {
+    if (this.getLayer()) {
       this.getLayer().bindPopup(content, options);
     }
   }

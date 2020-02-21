@@ -65,7 +65,7 @@ export class LeafletEsriFeatureLayer extends AbstractLeafletLayer {
    * @see FeatureLayer.setStyle
    */
   setStyle(style: L.PathOptions | StyleCallback): void {
-    if(this.layer) {
+    if (this.layer) {
       this.layer.setStyle(style);
     }
   }
@@ -76,7 +76,7 @@ export class LeafletEsriFeatureLayer extends AbstractLeafletLayer {
    * @see FeatureLayer.setFeatureStyle
    */
   setFeatureStyle(id: string | number, style: L.PathOptions | StyleCallback): void {
-    if(this.layer) {
+    if (this.layer) {
       this.layer.setFeatureStyle(id, style);
     }
   }
