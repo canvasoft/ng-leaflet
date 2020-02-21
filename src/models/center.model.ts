@@ -1,5 +1,8 @@
 import { isNullOrUndefined } from 'util';
 
+/**
+ * Interface for Leaflet Center.
+ */
 export interface ILeafletCenter {
   lat: number;
   lng: number;
@@ -7,6 +10,9 @@ export interface ILeafletCenter {
   autoDiscover?: boolean;
 }
 
+/**
+ * Center class for Leaflet
+ */
 export class LeafletCenter implements ILeafletCenter {
   constructor(
     public lat: number,
@@ -15,6 +21,11 @@ export class LeafletCenter implements ILeafletCenter {
     public autoDiscover: boolean = false
   ) {}
 
+  /**
+   * Get if center is valid.
+   *
+   * @returns True if center is valid.
+   */
   public isValid(): boolean {
     return !(isNullOrUndefined(this.lat) || isNullOrUndefined(this.lng) || isNullOrUndefined(this.zoom));
   }
